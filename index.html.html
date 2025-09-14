@@ -1,0 +1,529 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudharsan Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #0e0b1f;
+      background-image: radial-gradient(circle at 50% 50%, #2b1667 0%, transparent 100%);
+      color: #d1d5db;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      display:flex;
+    }
+
+    .nav-link {
+      color: #c7d2fe;
+      cursor: pointer;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #a78bfa;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      width: 100%;
+      background: #a78bfa;
+      border-radius: 2px;
+    }
+
+    a.button-primary {
+      background: linear-gradient(90deg, #6b46c1 0%, #9f7aea 100%);
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 0 15px #7c3aedaa;
+      transition: box-shadow 0.3s ease;
+    }
+
+    a.button-primary:hover {
+      box-shadow: 0 0 28px #7c3aedff;
+      color:white;
+    }
+
+    .button-secondary {
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      color: #c7d2fe;
+      border: 2px solid #a78bfa;
+      background: transparent;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .button-secondary:hover {
+      background: #a78bfa;
+      color: #1e293b;
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 12px #7c3aedcc;
+      }
+      50% {
+        box-shadow: 0 0 32px #7c3aedff;
+      }
+    }
+
+    /* Scrollbar for Portfolio grid to match background */
+    ::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1c1642;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #745ad4;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <header class="flex justify-between items-center px-6 py-4 border-b border-purple-700 sticky top-0 bg-gradient-to-b from-[#170e44cc] to-transparent z-50">
+    <div class="text-purple-500 font-bold text-lg select-none">Sudharsan</div>
+    <nav class="space-x-8 text-sm">
+      <span class="nav-link active" data-section="home">Home</span>
+      <span class="nav-link" data-section="about">About</span>
+      <span class="nav-link" data-section="portfolio">Portfolio</span>
+      <span class="nav-link" data-section="internships">Internships</span>
+      <span class="nav-link" data-section="contact">Contact</span>
+    </nav>
+  </header>
+ 
+
+  <!-- Main container -->
+  <main class="flex-grow container mx-auto max-w-6xl p-6">
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <div class="max-w-xl py-10">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="inline-block bg-purple-700 text-purple-300 text-xs py-1 px-3 rounded-full select-none">Ready to Innovate</span>
+        </div>
+        <h1 class="text-5xl font-extrabold text-white mb-2 leading-tight">
+          Full Stack  <span class="text-purple-600">Developer</span>
+        </h1>
+        <h2 class="text-xl font-semibold text-purple-300">
+          Tech Enthusiast
+        </h2>
+        <p class="text-gray-300 mb-6 max-w-lg leading-relaxed">
+Creating an Innovative Digital Solution        </p>
+        <div class="mb-6 flex gap-3 flex-wrap max-w-xs">
+          <span class="px-3 py-1 rounded-full border border-purple-700 text-purple-300 text-xs cursor-default select-none">Python</span>
+          <span class="px-3 py-1 rounded-full border border-purple-700 text-purple-300 text-xs cursor-default select-none">Java</span>
+          <span class="px-3 py-1 rounded-full border border-purple-700 text-purple-300 text-xs cursor-default select-none">JavaScript</span>
+          <span class="px-3 py-1 rounded-full border border-purple-700 text-purple-300 text-xs cursor-default select-none">NodeJS</span>
+        </div>
+        <div class="flex gap-4 mb-10">
+          <!-- <a href="#portfolio" class="button-primary flex items-center gap-2" title="Go to Projects">Projects <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg></a> -->
+                  <a class="nav-link button-primary flex items-center gap-2" data-section="portfolio">Project <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg></a>
+
+                  <span class="nav-link button-secondary flex items-center gap-2" data-section="contact">Contact <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m0 0l4-4m-4 4l4 4" />
+            </svg></span>
+            
+
+
+          <!-- <a href="#contact" class="button-secondary flex items-center gap-2" title="Contact me">Contact <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m0 0l4-4m-4 4l4 4" />
+            </svg></a> -->
+        </div>
+        <div class="flex gap-5">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="hover:text-purple-500 transition-colors duration-300" >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current text-purple-600" viewBox="0 0 24 24"><path d="M12 0.5C5.73 0.5 0.5 5.73 0.5 12c0 5.09 3.29 9.4 7.853 10.94.574.106.78-.25.78-.56 0-.277-.01-1.01-.015-1.98-3.193.69-3.87-1.54-3.87-1.54-.52-1.323-1.27-1.676-1.27-1.676-1.04-.71.078-.7.078-.7 1.15.08 1.757 1.184 1.757 1.184 1.02 1.753 2.676 1.246 3.33.954.103-.74.403-1.246.732-1.534-2.55-.29-5.235-1.275-5.235-5.67 0-1.252.447-2.275 1.18-3.076-.12-.29-.51-1.455.12-3.04 0 0 .96-.31 3.15 1.175a10.96 10.96 0 012.868-.385c.973.005 1.953.133 2.867.386 2.187-1.48 3.148-1.175 3.148-1.175.633 1.59.243 2.75.12 3.04.737.8 1.16 1.825 1.16 3.07 0 4.404-2.69 5.38-5.255 5.66.41.35.774 1.035.774 2.084 0 1.504-.014 2.717-.014 3.09 0 .315.203.67.79.557A10.524 10.524 0 0023.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="Linkedin" class="hover:text-purple-500 transition-colors duration-300" >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current text-purple-600" viewBox="0 0 24 24"><path d="M4.983 3.5A2.5 2.5 0 002.5 6v12a2.5 2.5 0 002.5 2.5h14.005a2.5 2.5 0 002.5-2.5V6a2.5 2.5 0 00-2.5-2.5H4.982zm.004 5.992v7.507H3.115v-7.5l1.87-.007zm-.902-3.122a1.084 1.084 0 110 2.165 1.084 1.084 0 010-2.165zm7.11 1.62v6.362h-1.898v-3.374a1.414 1.414 0 00-.063-.467.87.87 0 00-.757-.56c-.529 0-.97.37-1.13.89a1.13 1.13 0 00-.034.085v3.364H7.547v-7.5h1.86v1.018h.026a2.06 2.06 0 011.575-.814 2.27 2.27 0 011.476.642c.354.39.55.939.55 1.682z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-purple-500 transition-colors duration-300" >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current text-purple-600" viewBox="0 0 24 24"><path d="M7.507 2A5.508 5.508 0 002 7.507v8.987A5.508 5.508 0 007.507 22h8.987a5.508 5.508 0 005.5-5.506V7.507A5.508 5.508 0 0016.49 2H7.507zm0 2h8.987c1.374 0 2.5 1.12 2.5 2.5v8.987c0 1.376-1.126 2.5-2.5 2.5H7.507A2.507 2.507 0 015 16.494V7.507c0-1.38 1.12-2.5 2.507-2.5zm3.06 3a4 4 0 1 0 0 8.002 4 4 0 0 0 0-8.002zm0 2a2 2 0 1 1 0 4.002 2 2 0 0 1 0-4.002zm3.598-.13a.944.944 0 1 1 0 1.886.944.944 0 0 1 0-1.886z"/></svg>
+          </a> 
+        </div>
+      </div>
+       <div>
+<div class="coding-wrapper" style="position:relative; width:100%; height:100vh;">
+      <img src="Coding.gif" alt="profile" 
+</div>
+
+   <!-- <div class="image-backround">-->
+</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section hidden pt-10 text-center text-gray-300 max-w-xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-purple-600 mb-1">About Me</h2>
+      <p class="text-sm text-purple-300 mb-8 select-none">? Transforming ideas into digital experiences ?</p>
+      <div class="mx-auto mb-6 h-56 w-56 rounded-full overflow-hidden ring-4 ring-purple-500 shadow-lg shadow-purple-900/50">
+        <img src="Photo.jpg" alt="Portrait of Sudharsan smiling and standing in a casual black t-shirt outdoors during daytime" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/256x256?text=No+Image';" />
+      </div>
+      <h3 class="text-2xl font-semibold text-white mb-2">Hello, I'm <br />Sudharsan</h3>
+      <p class="mb-8 px-4">
+         I’m a B.Sc. Computer Science graduate (2024), currently seeking job opportunities with a keen interest in research and innovation in computer science. I have experience in Data Analytics, Front-End Development, and Software Engineering, and I am proficient in Python.</p>
+      <blockquote class="mx-6 mb-8 rounded-lg border border-purple-700 bg-gradient-to-r from-purple-900/30 to-purple-900/10 p-4 italic text-purple-300 shadow-md">
+        "Leveraging AI as a professional tool, not a replacement."
+      </blockquote>
+      <a href="#" class="button-primary inline-block mb-10" aria-label="Download CV">Download CV</a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section hidden pt-10">
+      <h2 class="text-4xl font-extrabold text-center text-purple-600 mb-2">Portfolio Showcase</h2>
+      <p class="text-center text-gray-400 mb-8 max-w-3xl mx-auto">
+        Explore my journey through projects, certifications, and technical expertise. Each section represents a milestone in my continuous learning path.
+      </p>
+
+      <!-- Portfolio Tabs -->
+      <nav class="max-w-3xl mx-auto flex justify-center bg-purple-900/10 rounded-xl border border-purple-800 shadow-lg mb-8 overflow-hidden select-none">
+        <button class="portfolio-tab flex-1 py-3 text-center font-semibold text-purple-300 bg-purple-700/50 shadow-inner active" data-tab="projects" aria-controls="tab-projects" aria-selected="true" role="tab" tabindex="0">
+          &lt;&gt; Projects
+        </button>
+        <button class="portfolio-tab flex-1 py-3 text-center font-semibold text-purple-300" data-tab="certificates" aria-controls="tab-certificates" aria-selected="false" role="tab" tabindex="-1">
+          <svg class="inline-block w-5 h-5 mr-1 align-middle" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M12 2L15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"></path>
+          </svg>
+          Certificates
+        </button>
+        <button class="portfolio-tab flex-1 py-3 text-center font-semibold text-purple-300" data-tab="techstack" aria-controls="tab-techstack" aria-selected="false" role="tab" tabindex="-1">
+          <svg class="inline-block w-5 h-5 mr-1 align-middle" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+          Tech Stack
+        </button>
+       <!-- <button class="portfolio-tab flex-1 py-3 text-center font-semibold text-purple-300" data-tab="Achievements" aria-controls="tab-techstack" aria-selected="false" role="tab" tabindex="-1">
+          <svg class="inline-block w-5 h-5 mr-1 align-middle" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+          Achievements
+        </button> -->
+
+      </nav> 
+
+      <!-- Projects Tab -->
+      <div id="tab-projects" role="tabpanel" tabindex="0" aria-labelledby="projects-tab" class="portfolio-content max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <article class="bg-purple-900/30 p-5 rounded-lg shadow-lg hover:shadow-purple-700 transition-shadow cursor-default">
+          <img src="project1.png" alt="Interface of Aritmatika Solver project running on laptop and mobile side by side with dark theme styling" class="rounded-md mb-3 w-full object-cover" loading="lazy" />
+          <h3 class="text-xl font-semibold text-purple-300 mb-1">Sales Data Analysis</h3>
+          <p class="text-gray-400 mb-2 text-sm">Analyzed sales data to identify seasonal trends, top-performing products, and customer preferences. Created dashboards with actionable insights to improve business decision-making.</p>
+          <a href="#" class="text-purple-400 hover:underline text-sm inline-block mr-4" target="_blank" rel="noopener noreferrer"></a>
+          <button class="text-purple-300 text-sm font-semibold hover:text-purple-500 flex items-center gap-1" disabled>
+            Details <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+        
+
+        <article class="bg-purple-900/30 p-5 rounded-lg shadow-lg hover:shadow-purple-700 transition-shadow cursor-default">
+          <img src="project2.png" alt="Buku Catatan website screenshot showing note-taking interface in dark mode" class="rounded-md mb-3 w-full object-cover" loading="lazy" />
+          <h3 class="text-xl font-semibold text-purple-300 mb-1">E-commerce Data Dashboard </h3>
+          <p class="text-gray-400 mb-2 text-sm">Designed an interactive dashboard using Tableau/Power BI to track revenue, customer acquisition, and order patterns, helping stakeholders make data-driven decisions.</p>
+          <a href="#" class="text-purple-400 hover:underline text-sm inline-block mr-4" target="_blank" rel="noopener noreferrer"></a>
+          <button class="text-purple-300 text-sm font-semibold hover:text-purple-500 flex items-center gap-1" disabled>
+            Details <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+        <article class="bg-purple-900/30 p-5 rounded-lg shadow-lg hover:shadow-purple-700 transition-shadow cursor-default">
+          <img src="project3.png" alt="Oprec 24 organizational website project home page with dark theme and red highlights" class="rounded-md mb-3 w-full object-cover" loading="lazy" />
+          <h3 class="text-xl font-semibold text-purple-300 mb-1">AI Chatbot for Customer Support</h3>
+          <p class="text-gray-400 mb-2 text-sm">Developed an AI-powered chatbot using Python and NLP libraries to handle customer queries, provide product information, and resolve common issues. Integrated the chatbot with a web interface for real-time user interaction, reducing manual support workload.</p>
+          <a href="#" class="text-purple-400 hover:underline text-sm inline-block mr-4" target="_blank" rel="noopener noreferrer"></a>
+          <button class="text-purple-300 text-sm font-semibold hover:text-purple-500 flex items-center gap-1" disabled>
+            Details <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+
+        <article class="bg-purple-900/30 p-5 rounded-lg shadow-lg hover:shadow-purple-700 transition-shadow cursor-default">
+          <img src="project4.png" alt="Oprec 24 organizational website project home page with dark theme and red highlights" class="rounded-md mb-3 w-full object-cover" loading="lazy" />
+          <h3 class="text-xl font-semibold text-purple-300 mb-1">E-commerce Web Application</h3>
+          <p class="text-gray-400 mb-2 text-sm">Developed an e-commerce platform with product catalog, shopping cart, payment gateway integration, and order tracking using React, Node.js, and MongoDB.</p>
+          <a href="#" class="text-purple-400 hover:underline text-sm inline-block mr-4" target="_blank" rel="noopener noreferrer"></a>
+          <button class="text-purple-300 text-sm font-semibold hover:text-purple-500 flex items-center gap-1" disabled>
+            Details <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+        
+
+       <!-- <article class="bg-purple-900/30 p-5 rounded-lg shadow-lg hover:shadow-purple-700 transition-shadow cursor-default">
+          <img src="https://placehold.co/600x300?text=Oprec+24+UI" alt="Oprec 24 organizational website project home page with dark theme and red highlights" class="rounded-md mb-3 w-full object-cover" loading="lazy" />
+          <h3 class="text-xl font-semibold text-purple-300 mb-1">Oprec 24</h3>
+          <p class="text-gray-400 mb-2 text-sm">Sebuah project pembuatan website organisasi yang mencakup deskripsi, galeri, dan sistem pendaftaran online yang responsif dan mudah digunakan.</p>
+          <a href="#" class="text-purple-400 hover:underline text-sm inline-block mr-4" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <button class="text-purple-300 text-sm font-semibold hover:text-purple-500 flex items-center gap-1" disabled>
+            Details <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article> -->
+      </div> 
+
+      <!-- Certificates Tab -->
+      <div id="tab-certificates" role="tabpanel" tabindex="0" aria-labelledby="certificates-tab" class="portfolio-content max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-6 hidden">
+        <img src="TATA.jpg" alt="Certificate of completion for JavaScript Basic Training issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+        <img src="isro.jpg" alt="Certificate of completion for React Basic Training issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+        <img src="ACCENTURE.jpg" alt="Certificate of completion for Front-end Web Development Training issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+        <img src="python.jpg" alt="Certificate of completion for React Intermediate Training issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+        <img src="BCG.jpg" alt="Certificate of completion for Front-end Framework React Training issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+        <img src="data.jpg" alt="Certificate of completion for Pemrograman JavaScript issued to Eki Zulfar Rachman by Dicoding with a badge and signature" class="rounded-lg shadow-md object-contain" loading="lazy" />
+      </div>
+
+      <!-- Tech Stack Tab -->
+      <div id="tab-techstack" role="tabpanel" tabindex="0" aria-labelledby="techstack-tab" class="portfolio-content max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 hidden text-center py-4">
+        <div class="bg-purple-900/30 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-purple-700 transition-shadow">
+          <img src="https://placehold.co/64x64?text=HTML5" alt="HTML5 icon in orange and white colors stylized" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-purple-300">HTML</span>
+        </div>
+        <div class="bg-purple-900/30 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-purple-700 transition-shadow">
+          <img src="https://placehold.co/64x64?text=CSS3" alt="CSS3 icon with blue shield logo" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-purple-300">CSS</span>
+        </div>
+        <div class="bg-yellow-300 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-yellow-400/80 transition-shadow">
+          <img src="https://placehold.co/64x64?text=JS" alt="JavaScript icon with distinctive yellow background and black JS letters" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-yellow-300">JavaScript</span>
+        </div>
+        <div class="bg-purple-800 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-purple-600 transition-shadow">
+          <img src="https://placehold.co/64x64?text=Tailwind" alt="Tailwind CSS icon with pale turquoise wave shapes symbol" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-purple-300">Tailwind CSS</span>
+        </div>
+        <div class="bg-cyan-600 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-cyan-500 transition-shadow">
+          <img src="https://placehold.co/64x64?text=React" alt="ReactJS logo with atomic electron rings in cyan color" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-cyan-300">ReactJS</span>
+        </div>
+        <div class="bg-yellow-400 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-yellow-400 transition-shadow">
+          <img src="https://placehold.co/64x64?text=SQL" alt="ViteJS icon with stylized lightning bolt in multiple shades of yellow and purple" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-yellow-300">SQL</span>
+        </div>
+        <div class="bg-green-700 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-green-600 transition-shadow">
+          <img src="https://placehold.co/64x64?text=NodeJS" alt="Node.js hexagonal green logo icon with JS letters" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-green-300">Node JS</span>
+        </div>
+        <div class="bg-purple-700 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-purple-600 transition-shadow">
+          <img src="https://placehold.co/64x64?text=Java" alt="Bootstrap icon purple shield logo" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-purple-300">Java</span>
+        </div>
+        <div class="bg-yellow-500 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-yellow-400 transition-shadow">
+          <img src="https://placehold.co/64x64?text=Spring" alt="Firebase icon with stylized flame logo in yellow and orange gradient" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-yellow-300">Spring</span>
+        </div>
+        <div class="bg-blue-600 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-blue-500 transition-shadow">
+          <img src="https://placehold.co/64x64?text=python +UI" alt="Material UI logo M-shaped with blue gradient colors" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-blue-300">python UI</span>
+        </div>
+        <div class="bg-black rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-gray-700 transition-shadow">
+          <img src="https://placehold.co/64x64?text=Vercel" alt="Vercel icon black circle with white triangle shape" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-gray-300">Vercel</span>
+        </div>
+       <!-- <div class="bg-pink-400 rounded-lg p-4 flex flex-col items-center cursor-default select-none shadow hover:shadow-pink-300 transition-shadow">
+          <img src="https://placehold.co/64x64?text=SweetAlert2" alt="SweetAlert2 icon with sweet donut shape and pink gradient" loading="lazy" />
+          <span class="mt-2 text-sm font-semibold text-pink-300">SweetAlert2</span>
+        </div> -->
+      </div>
+    </section>
+    <!-- Achievements section -->
+     
+
+       
+
+    <!-- Internships Section -->
+    <section id="internships" class="section hidden pt-10 max-w-3xl mx-auto text-gray-300">
+      <h2 class="text-4xl font-extrabold text-center text-purple-600 mb-6">Computer Science Internships</h2>
+      <ul class="space-y-6">
+        <li class="bg-purple-900/30 rounded-lg p-5 shadow-lg hover:shadow-purple-700 transition-shadow">
+          <h3 class="text-purple-400 text-lg font-semibold mb-1"> AI Intern (Virtual) - AICTE .</h3>
+          <p class="text-sm text-gray-400">Duration: January 2025 - Febuary 2025 </p>
+          <p class="text-gray-300 mt-2 text-sm">A joint CSR initiative of Microsoft & SAP focused on foundational and applied aspects of Artificial Intelligence technologies.</p>
+        </li>
+        <li class="bg-purple-900/30 rounded-lg p-5 shadow-lg hover:shadow-purple-700 transition-shadow">
+          <h3 class="text-purple-400 text-lg font-semibold mb-1">Data Analytics Intern - Main Flow Services and Technologies Pvt.Ltd</h3>
+          <p class="text-sm text-gray-400">Duration: January 2025 - March 2025</p>
+          <p class="text-gray-300 mt-2 text-sm"> I'm Working with key libraries like Pandas, NumPy, Matplotlib, and Seaborn to clean, analyze, and visualize data. These technologies enabled efficient data manipulation, handling of large datasets, and creation of insightful visualizations.</p>
+        </li>
+        <li class="bg-purple-900/30 rounded-lg p-5 shadow-lg hover:shadow-purple-700 transition-shadow">
+          <h3 class="text-purple-400 text-lg font-semibold mb-1">Python Development Intern -  Main Flow Services and Technologies Pvt.Ltd</h3>
+          <p class="text-sm text-gray-400">Duration: May 2025 - July 2025</p>
+          <p class="text-gray-300 mt-2 text-sm">Python Developer Intern with hands-on experience in building scalable web-based applications and automation tools using Python, Django/Flask, HTML, CSS, JavaScript, and SQL/NoSQL databases.</p>
+        </li>
+      <!--  <li class="bg-purple-900/30 rounded-lg p-5 shadow-lg hover:shadow-purple-700 transition-shadow">
+          <h3 class="text-purple-400 text-lg font-semibold mb-1">Full Stack Intern - Digital Startups Hub</h3>
+          <p class="text-sm text-gray-400">Duration: June 2021 - August 2021</p>
+          <p class="text-gray-300 mt-2 text-sm">Contributed to both frontend and backend components of a startup MVP, using React, Node.js, and Bootstrap.</p>
+        </li>
+      </ul> -->
+    </section> 
+          
+
+    <!-- Contact Section -->
+    <section id="contact" class="section hidden pt-10 max-w-3xl mx-auto text-gray-300">
+      <h2 class="text-4xl font-extrabold text-center text-purple-600 mb-2">Contact Me</h2>
+      <p class="text-center mb-10 text-gray-400">Have a questions? Send me a Message, and I'll get back to you Within 12 hours.</p>
+
+      <form id="contactForm" class="bg-purple-900/30 rounded-xl p-8 shadow-lg space-y-6">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4">Get in touch</h3>
+        <p class="mb-4 text-gray-400">Anything you'd like to discuss? Send me a message and let's talk.</p>
+
+        <div>
+          <label class="sr-only" for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required autocomplete="name"
+            class="w-full rounded-md bg-purple-800/60 border border-purple-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-600 focus:outline-none px-4 py-3 placeholder:text-purple-500 text-purple-100 transition" />
+        </div>
+        <div>
+          <label class="sr-only" for="email">Your Email</label>
+          <input id="email" name="email" type="email" placeholder="Your Email" required autocomplete="email"
+            class="w-full rounded-md bg-purple-800/60 border border-purple-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-600 focus:outline-none px-4 py-3 placeholder:text-purple-500 text-purple-100 transition" />
+        </div>
+        <div>
+          <label class="sr-only" for="message">Your message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Your message" required
+            class="w-full rounded-md bg-purple-800/60 border border-purple-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-600 focus:outline-none px-4 py-3 placeholder:text-purple-500 text-purple-100 transition resize-y"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-purple-600 via-purple-400 to-purple-700 rounded-md py-3 text-white font-semibold hover:from-purple-700 hover:via-purple-500 hover:to-purple-800 transition shadow-lg flex justify-center items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l7-7-7-7M5 12h14" />
+          </svg>
+          Send message
+        </button>
+      </form>
+
+      <div class="mt-10 bg-purple-900/20 rounded-lg p-6 text-gray-300 shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 00-8 0v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Connect With Me
+        </h3>
+        <ul class="space-y-3">
+          <li class="bg-purple-900/40 rounded-md p-3 flex items-center gap-4 shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.038-1.851-3.038-1.854 0-2.136 1.445-2.136 2.94v5.667H8.354V9h3.413v1.561h.049c.475-.9 1.637-1.851 3.368-1.851 3.602 0 4.269 2.37 4.269 5.46v6.282zM5.337 7.433c-1.147 0-2.077-.93-2.077-2.077 0-1.148.93-2.078 2.077-2.078s2.077.93 2.077 2.078c0 1.147-.93 2.077-2.077 2.077zM6.656 20.452H3.98V9h2.676v11.452z"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-md">Let's Connect</p>
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-purple-400 hover:underline text-sm" rel="noopener noreferrer">on LinkedIn</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-purple-700 text-xs p-4 select-none border-t border-purple-900/50">
+    &copy; 2025 Sudharsan - All rights reserved.
+  </footer>
+
+  <script>
+    // Navigation click handler
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section.section');
+
+    function activateSection(sectionId) {
+      sections.forEach((section) => {
+        if (section.id === sectionId) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+      navLinks.forEach((link) => {
+        if (link.dataset.section === sectionId) {
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('active');
+          link.removeAttribute('aria-current');
+        }
+      });
+      window.scrollTo(0, 0);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        activateSection(link.dataset.section);
+      });
+    });
+
+    // Activate home as default on load
+    activateSection('home');
+
+    // Portfolio tabs
+    const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+    const portfolioContents = document.querySelectorAll('.portfolio-content');
+
+    portfolioTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        portfolioTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+          t.tabIndex = -1;
+        });
+        portfolioContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.tabIndex = 0;
+
+        const target = tab.dataset.tab;
+        document.getElementById('tab-' + target).classList.remove('hidden');
+      });
+    });
+
+    // Contact form simple handler
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      contactForm.reset();
+    });
+  </script>
+</body>
+
+</html>
