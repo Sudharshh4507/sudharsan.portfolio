@@ -7,6 +7,15 @@
   <title>Sudharsan Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+     :root{
+    --text:"Tech Enthusiast";
+    --chars: 15; /* update when you change the text (count spaces) */
+    --speed: 2.4s; /* time to type the whole text */
+    --blink-speed: .8s;
+    --font-size: 48px;
+    --font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    --color: #0f172a;
+  }
     body {
       background: #0e0b1f;
       background-image: radial-gradient(circle at 50% 50%, #2b1667 0%, transparent 100%);
@@ -23,6 +32,13 @@
       transition: color 0.3s ease;
       position: relative;
     }
+
+   
+    .home-img{
+      width: auto;
+      height: 300px;
+      margin-left:100px;
+    } 
 
     .nav-link:hover,
     .nav-link.active {
@@ -99,8 +115,41 @@
       background: #745ad4;
       border-radius: 3px;
     }
+
+     .typewrap{
+    font-size:28px;
+    color:white;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+    overflow:hidden;           /* hide the overflowing text while typing */
+    border-right: .12em solid rgba(76, 18, 212, 0.8); /* cursor */
+    box-sizing:content-box;
+    padding-right:.1em;
+    width: max-content;
+  }
+
+  /* animate the reveal by expanding the element's width with step timing */
+  .typewrap .txt{
+    display:inline-block;
+    transform-origin: left;
+    animation:
+      typing var(--speed) steps(var(--chars)) forwards,
+      blink-caret var(--blink-speed) steps(1) infinite;
+  }
+
+  /* keyframes for typing (reveal characters using ch unit) */
+  @keyframes typing{
+    from { width: 0ch; }
+    to   { width: calc(var(--chars) * 1ch); } /* reveal all characters */
+  }
+
+  /* caret blink (alternates border-color visibility) */
+  @keyframes blink-caret{
+    50% { border-right-color: transparent; }
+  }
   </style>
 </head>
+
 
 <body class="min-h-screen flex flex-col">
 
@@ -121,7 +170,8 @@
   <main class="flex-grow container mx-auto max-w-6xl p-6">
 
     <!-- Home Section -->
-    <section id="home" class="section">
+    <section id="home" class="section" >
+      <div class="homeclass" style="display: flex;">
       <div class="max-w-xl py-10">
         <div class="flex items-center gap-2 mb-2">
           <span class="inline-block bg-purple-700 text-purple-300 text-xs py-1 px-3 rounded-full select-none">Ready to Innovate</span>
@@ -130,7 +180,9 @@
           Full Stack  <span class="text-purple-600">Developer</span>
         </h1>
         <h2 class="text-xl font-semibold text-purple-300">
-          Tech Enthusiast
+          <div class="typewrap" aria-label='typing text'>
+    <span class="txt">Tech Enthusiast</span>
+  </div>
         </h2>
         <p class="text-gray-300 mb-6 max-w-lg leading-relaxed">
 Creating an Innovative Digital Solution        </p>
@@ -166,7 +218,7 @@ Creating an Innovative Digital Solution        </p>
           <a href="https://github.com/sudharsan0745" target="_blank" aria-label="GitHub" class="hover:text-purple-500 transition-colors duration-300" >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current text-purple-600" viewBox="0 0 24 24"><path d="M12 0.5C5.73 0.5 0.5 5.73 0.5 12c0 5.09 3.29 9.4 7.853 10.94.574.106.78-.25.78-.56 0-.277-.01-1.01-.015-1.98-3.193.69-3.87-1.54-3.87-1.54-.52-1.323-1.27-1.676-1.27-1.676-1.04-.71.078-.7.078-.7 1.15.08 1.757 1.184 1.757 1.184 1.02 1.753 2.676 1.246 3.33.954.103-.74.403-1.246.732-1.534-2.55-.29-5.235-1.275-5.235-5.67 0-1.252.447-2.275 1.18-3.076-.12-.29-.51-1.455.12-3.04 0 0 .96-.31 3.15 1.175a10.96 10.96 0 012.868-.385c.973.005 1.953.133 2.867.386 2.187-1.48 3.148-1.175 3.148-1.175.633 1.59.243 2.75.12 3.04.737.8 1.16 1.825 1.16 3.07 0 4.404-2.69 5.38-5.255 5.66.41.35.774 1.035.774 2.084 0 1.504-.014 2.717-.014 3.09 0 .315.203.67.79.557A10.524 10.524 0 0023.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
           </a>
-          <a href="https://www.linkedin.com/in/sudharsan-t-1623ab347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Linkedin" class="hover:text-purple-500 transition-colors duration-300" >
+          <a href="https://www.linkedin.com/in/sudharsan-t-934340308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Linkedin" class="hover:text-purple-500 transition-colors duration-300" >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current text-purple-600" viewBox="0 0 24 24"><path d="M4.983 3.5A2.5 2.5 0 002.5 6v12a2.5 2.5 0 002.5 2.5h14.005a2.5 2.5 0 002.5-2.5V6a2.5 2.5 0 00-2.5-2.5H4.982zm.004 5.992v7.507H3.115v-7.5l1.87-.007zm-.902-3.122a1.084 1.084 0 110 2.165 1.084 1.084 0 010-2.165zm7.11 1.62v6.362h-1.898v-3.374a1.414 1.414 0 00-.063-.467.87.87 0 00-.757-.56c-.529 0-.97.37-1.13.89a1.13 1.13 0 00-.034.085v3.364H7.547v-7.5h1.86v1.018h.026a2.06 2.06 0 011.575-.814 2.27 2.27 0 011.476.642c.354.39.55.939.55 1.682z"/></svg>
           </a>
           <a href="https://www.instagram.com/mr.programmer_360?igsh=MXBqbTJ5MXd0d2ZkNw==" target="_blank" aria-label="Instagram" class="hover:text-purple-500 transition-colors duration-300" >
@@ -174,13 +226,15 @@ Creating an Innovative Digital Solution        </p>
           </a> 
         </div>
       </div>
-       <div>
+             <div>
 <div class="coding-wrapper" style="position:relative; width:100%; height:100vh;">
-      <img src="Coding.gif" alt="profile" 
+      <img src="Coding.gif" alt="profile" class="home-img"/>
+</div>
+
 </div>
 
    <!-- <div class="image-backround">-->
-</div>
+
     </section>
 
     <!-- About Section -->
@@ -191,12 +245,12 @@ Creating an Innovative Digital Solution        </p>
         <img src="Photo.jpg" alt="Portrait of Sudharsan smiling and standing in a casual black t-shirt outdoors during daytime" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/256x256?text=No+Image';" />
       </div>
       <h3 class="text-2xl font-semibold text-white mb-2">Hello, I'm <br />Sudharsan</h3>
-      <p class="mb-8 px-4">
-         I’m a B.Sc. Computer Science graduate (2024), currently seeking job opportunities with a keen interest in research and innovation in computer science. I have experience in Data Analytics, Front-End Development, and Software Engineering, and I am proficient in Python.</p>
-      <blockquote class="mx-6 mb-8 rounded-lg border border-purple-700 bg-gradient-to-r from-purple-900/30 to-purple-900/10 p-4 italic text-purple-300 shadow-md">
+      <p class="mb-8 px-4"> I’m a B.Sc. Computer Science graduate (2024), currently seeking job opportunities with a keen interest in research and innovation in computer science. I have experience in Data Analytics, Front-End Development, and Software Engineering, and I am proficient in Python.
+
+</p>      <blockquote class="mx-6 mb-8 rounded-lg border border-purple-700 bg-gradient-to-r from-purple-900/30 to-purple-900/10 p-4 italic text-purple-300 shadow-md">
         "Leveraging AI as a professional tool, not a replacement."
       </blockquote>
-      <a href="#" class="button-primary inline-block mb-10" aria-label="Download CV">Download CV</a>
+      <a href="Sudharsan Analytics & Digital Marketing.pdf" class="button-primary inline-block mb-10" aria-label="Download CV">Download CV</a>
     </section>
 
     <!-- Portfolio Section -->
@@ -445,7 +499,7 @@ Creating an Innovative Digital Solution        </p>
             </svg>
             <div>
               <p class="font-semibold text-md">Let's Connect</p>
-              <a href="https://www.linkedin.com/in/sudharsan-t-1623ab347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-purple-400 hover:underline text-sm" rel="noopener noreferrer">on LinkedIn</a>
+              <a href="https://www.linkedin.com/in/sudharsan-t-934340308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-purple-400 hover:underline text-sm" rel="noopener noreferrer">on LinkedIn</a>
             </div>
           </li>
         </ul>
@@ -524,7 +578,36 @@ Creating an Innovative Digital Solution        </p>
       contactForm.reset();
     });
   </script>
+
+<script>
+    // Replace targetEmail if you want a different recipient
+    const targetEmail = "sudharsan4507@gmail.com";
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const from = encodeURIComponent(document.getElementById('email').value.trim());
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+
+      const subject = encodeURIComponent("Portfolio contact from " + (name || from));
+      const body = encodeURIComponent(
+        "Name: " + decodeURIComponent(name) + "\n" +
+        "From: " + decodeURIComponent(from) + "\n\n" +
+        "Message:\n" + decodeURIComponent(message)
+      );
+
+      // Construct mailto link
+      const mailtoLink = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+
+      // Open the user's default mail client
+      window.location.href = mailtoLink;
+
+      // Inform the user
+      const status = document.getElementById('status');
+      status.textContent = "Your mail client should open. If it doesn't, make sure you have an email client configured.";
+    });
+  </script>
+
 </body>
 
 </html>
-
